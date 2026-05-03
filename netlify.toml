@@ -1,0 +1,25 @@
+# Netlify Configuration for Jyothi Tanneru Portfolio
+
+# Build settings
+[build]
+  # Directory to deploy
+  publish = "."
+  # No build command needed for static HTML
+  command = ""
+
+# Redirect rules
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Cache settings
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Cache-Control = "public, max-age=3600"
+
+[[headers]]
+  for = "*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
